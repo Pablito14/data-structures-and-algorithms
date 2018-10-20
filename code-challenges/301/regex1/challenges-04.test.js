@@ -14,7 +14,7 @@ For example:
 
 const isNum = (input) => {
   let regex = /\d/gm;
-  input.match(regex);
+  return regex.test(input);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -26,7 +26,8 @@ Return an array containing all the matches.
 ------------------------------------------------------------------------------------------------ */
 
 const isCapitalized = (str) => {
-  // Solution code here...
+  let regex = /[A-Z]+/g;
+  return str.match(regex);
 };
 
 /* ------------------------------------------------------------------------------------------------
