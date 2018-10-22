@@ -11,7 +11,7 @@ Then, write a function named speaker that takes in a string and a callback funct
 const greeting = (word) => word.toUpperCase();
 
 const speaker = (message, callback) => {
-
+  return callback(message);
 }
 
 /* ------------------------------------------------------------------------------------------------
@@ -146,7 +146,7 @@ describe('Testing challenge 1', () => {
   });
 });
 
-xdescribe('Testing challenge 2', () => {
+describe('Testing challenge 2', () => {
   test('It should add the number 8 to the array five times', () => {
     expect(addNumbers(8, [], 5, addValues)).toStrictEqual([8, 8, 8, 8, 8]);
     expect(addNumbers(8, [], 5, addValues).length).toStrictEqual(5);
