@@ -17,7 +17,7 @@ CHALLENGE 2
 
 Write a function named returnNames that, given the Star Wars data, below, uses reduce to return an array containing the names of the characters.
 ------------------------------------------------------------------------------------------------ */
-
+//I'm Sorry D=:
 let starWarsData = [{
   name: 'Luke Skywalker',
   height: '172',
