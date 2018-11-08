@@ -5,7 +5,7 @@ CHALLENGE 1
 
 Write a function named isNum that takes in a string or number of any length. This function should use a regular expression pattern to return true if the input contains a number, and false if the input does not contain a number.
 
-For example: 
+For example:
 12345 returns true
 '12345' returns true
 'h3llo world' returns true
@@ -26,7 +26,7 @@ Return an array containing all the matches.
 ------------------------------------------------------------------------------------------------ */
 
 const isCapitalized = (str) => {
-  let regex = /[A-Z]+/g;
+  let regex = /\b(\w*[A-Z]\w*)\b/gm;
   return str.match(regex);
 };
 
@@ -35,9 +35,18 @@ CHALLENGE 3
 
 Write a function named citiesAtoJ that takes in an array of city names and uses a regular expression pattern to return a new array containing any cities that begin with the letters A through J, inclusive.
 ------------------------------------------------------------------------------------------------ */
+// let cities = ['Cleveland', 'San Diego', 'Birmingham', 'Seattle', 'Miami', 'New York City', 'Omaha', 'Portland', 'Austin', 'Boston', 'Newport Beach', 'Hoboken'];
 
 const citiesAtoJ = (arr) => {
-  // Solution code here...
+  let myCities = [];
+  for (let i = 0; i < arr.length; i++){
+    let regex = /[A-J]/g;
+    var firstLetter = arr[i][0].match(regex);
+    if (firstLetter){
+      myCities.push(arr[i]);
+    }
+  }
+  return myCities
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -53,7 +62,7 @@ Do not use the vertical bar (pipe) in your pattern.
 ------------------------------------------------------------------------------------------------ */
 
 const matchMonth = (input) => {
-  // Solution code here...
+  
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -75,7 +84,7 @@ CHALLENGE 6
 
 You want to teach a friend how to play hangman and want to show them using a partially complete puzzle.
 
-Write a function named hangman which uses the replace method to remove all of the vowels (a, e, i, o, u) from the hangman string and replace them with an underscore. 
+Write a function named hangman which uses the replace method to remove all of the vowels (a, e, i, o, u) from the hangman string and replace them with an underscore.
 
 The function should return a string containing the consonants in their original positions and underscores where the vowels were previously located.
 
