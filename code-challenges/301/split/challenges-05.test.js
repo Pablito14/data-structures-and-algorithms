@@ -78,8 +78,12 @@ const gruffaloCrumble = {
 
 const listFoods = (recipe) => {
   let result = [];
-
-
+  let ingredients = recipe.ingredients;
+  ingredients.forEach((e)=>{
+    let split = e.split(' ');
+    let remove = split.slice(2);
+    result.push(remove.join(' '));
+  })
   return result;
 }
 
@@ -93,7 +97,12 @@ You may also use other string or array methods.
 
 const splitFoods = (recipe) => {
   let result = [];
-  // Solution code here...
+  let ingredients = recipe.ingredients;
+  ingredients.forEach((e)=>{
+    let split = e.split(' ');
+    let remove = split.splice(2);
+    result.push(remove.join(' '));
+  })
   return result;
 }
 
@@ -109,7 +118,12 @@ Return a new array containing just the verbs. For example, ['Mix until evenly di
 
 const stepActions = (recipe) => {
   let result = [];
-  // Solution code here...
+  let steps = recipe.steps;
+  steps.forEach((e)=>{
+    let split = e.split(' ');
+    let getAction = split.slice(0,1);
+    result.push(getAction.join(' '));
+  })  
   return result;
 }
 
@@ -127,7 +141,12 @@ For example:
 ------------------------------------------------------------------------------------------------ */
 
 const removeEvenValues = (arr) => {
-  // Solution code here...
+  for(let i=arr.length; i>=0; i--){
+    if(arr[i]%2 === 0){
+      arr.splice(i,1)
+   }
+  };
+  return arr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -225,20 +244,20 @@ describe('Testing challenge 3', () => {
   });
 });
 
-xdescribe('Testing challenge 4', () => {
+describe('Testing challenge 4', () => {
   test('It should return a list of foods', () => {
     expect(splitFoods(gruffaloCrumble)).toStrictEqual(['Gruffalo', 'oats', 'brown sugar', 'flour', 'pure maple syrup', 'chopped nuts', 'baking soda', 'baking powder', 'cinnamon', 'melted butter', 'fresh water']);
   });
 });
 
-xdescribe('Testing challenge 5', () => {
+describe('Testing challenge 5', () => {
   test('It should return a list of recipe steps', () => {
     expect(stepActions(gruffaloCrumble)).toStrictEqual(['Pre-heat', 'De-prickle', 'Sprinkle', 'Mix', 'Grease', 'Combine', 'Fold', 'Spread', 'Bake']);
     expect(stepActions(gruffaloCrumble).length).toStrictEqual(9);
   });
 });
 
-xdescribe('Testing challenge 6', () => {
+describe('Testing challenge 6', () => {
   test('It should remove the even numbers from the array', () => {
     let list = [1, 2, 3, 4, 5, 6];
     removeEvenValues(list);
