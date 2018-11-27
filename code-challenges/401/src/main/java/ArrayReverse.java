@@ -1,17 +1,25 @@
 public class ArrayReverse {
 
     public static void main(String[] args) {
-        System.out.println("Hello World!");
-        String[] example = new String[5]; // maybe the wrong spot to put this, will find out later
-        reverseArray(example);
+        String[] example = new String[3];
+        example[0] = "zero";
+        example[1] = "one";
+        example[2] = "two";
+        String[] answer = reverseArray(example);
+        System.out.println(answer);
     }
 
     public static String[] reverseArray(String[] arrayToReverse){
-        //counts backwards from the length of the passed array until reaching the final element
-        for(int i = arrayToReverse.length; i >= 0; i--){
+        String[] reversedArray = new String[arrayToReverse.length];
+        int i = 0;
+        int j = arrayToReverse.length-1;
 
+        while(j < 0){
+            reversedArray[i] = arrayToReverse[j];
+            i++;
+            j--;
         }
-        return answer;
+        return reversedArray;
     }
 
 
