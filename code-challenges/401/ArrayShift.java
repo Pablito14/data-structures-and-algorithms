@@ -1,15 +1,18 @@
+
+import java.util.Arrays;
+
 public class ArrayShift {
 
     public static void main(String [] args){
-        System.out.println("Rest in peace Stephen Hillenburg, enjoy that sweet, sweet victroy yeah...");
+        System.out.println("Hello world!");
         int[] myArray = new int[3];
         int[] myOtherArray = new int[4];
 
         int [] oddAnswer = insertShiftArray(myArray, 9);
         int [] evenAnswer = insertShiftArray(myOtherArray, 9);
 
-        System.out.println(oddAnswer);
-        System.out.println(evenAnswer);
+        System.out.println(Arrays.toString(oddAnswer));
+        System.out.println(Arrays.toString(evenAnswer));
     }
 
     public static int[] insertShiftArray(int[] oldArray, int nuevo){
